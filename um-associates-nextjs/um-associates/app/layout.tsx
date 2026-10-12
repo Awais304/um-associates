@@ -1,0 +1,6 @@
+import type {Metadata} from 'next';
+import {Header,Footer,ScrollTop} from '@/components/ui';
+import {settings} from '@/lib/content';
+import './globals.css';
+export const metadata:Metadata={metadataBase:new URL(settings.url),title:{default:'UM Associates | Business. Digital. Security.',template:'%s | UM Associates'},description:'Integrated business advisory, creative technology, and cybersecurity services for organizations in Pakistan and international markets.',openGraph:{type:'website',siteName:'UM Associates',title:'UM Associates | One group. Multiple specializations.',description:'Business advisory, digital innovation, and cybersecurity expertise.',images:[{url:'/opengraph-image',width:1200,height:630}]},twitter:{card:'summary_large_image'}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><a href="#main" className="skip-link">Skip to content</a><Header/><main id="main">{children}</main><Footer/><ScrollTop/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:settings.name,url:settings.url,email:settings.email,telephone:settings.phone}).replace(/</g,'\\u003c')}}/></body></html>}

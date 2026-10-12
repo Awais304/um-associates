@@ -1,0 +1,2 @@
+import {z} from 'zod';
+export const enquirySchema=z.object({name:z.string().trim().min(2).max(100),company:z.string().trim().min(2).max(160),email:z.email().max(254),country:z.string().trim().min(2).max(100),phone:z.string().max(40).optional(),division:z.string().min(1).max(100),service:z.string().min(1).max(200),requirements:z.string().trim().min(20).max(5000),consent:z.literal(true),website:z.string().max(0),token:z.string().min(1)});
